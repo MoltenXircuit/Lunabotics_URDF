@@ -1,0 +1,232 @@
+<?xml version="1.0" ?>
+<robot name="digbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find lunabotics2025_urdf)/urdf/materials.xacro" />
+<!--xacro:include filename="$(find lunabotics2025_urdf)/urdf/lunabotics_urdf.trans" /-->
+<xacro:include filename="$(find lunabotics2025_urdf)/urdf/lunabotics_urdf.gazebo" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.25586676353018807 0.000039307641348851954 0.2586743162275578" rpy="0 0 0"/>
+    <mass value="145.15"/>
+    <inertia ixx="4.84425197236" iyy="4.557425293" izz="5.02371818712" iyz="0.0" ixy="0.0" ixz="-0.02161067673"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/Diff.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="dk_green"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/Diff.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_fl">
+  <inertial>
+    <origin xyz="-3.730349362740526e-15 0.09077849192803256 -3.83026943495679e-15" rpy="0 0 0"/>
+    <mass value="6.80389"/>
+    <inertia ixx="0.11749384354" iyy="0.20716716933" izz="0.11749384354" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/DigWheel.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/DigWheel.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_fr">
+  <inertial>
+    <origin xyz="3.9968028886505635e-15 -0.09077849192803216 3.730349362740526e-15" rpy="0 0 0"/>
+    <mass value="6.80389"/>
+    <inertia ixx="0.11749384354" iyy="0.20716716933" izz="0.11749384354" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/DigWheel.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/DigWheel.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_bl">
+  <inertial>
+    <origin xyz="-3.730349362740526e-15 0.09077849192803207 3.808064974464287e-15" rpy="0 0 0"/>
+    <mass value="6.80389"/>
+    <inertia ixx="0.11749384354" iyy="0.20716716933" izz="0.11749384354" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/DigWheel.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/DigWheel.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_br">
+  <inertial>
+    <origin xyz="3.9968028886505635e-15 -0.0907784919280322 -3.785860513971784e-15 " rpy="0 0 0"/>
+    <mass value="6.80389"/>
+    <inertia ixx="0.11749384354" iyy="0.20716716933" izz="0.11749384354" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/DigWheel.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/DigWheel.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="rocker_r">
+  <inertial>
+    <origin xyz="-0.4002194744336831 -2.8073985617496778e-16 0.04900225925646633" rpy="0 0 0"/>
+    <mass value="145.15"/>
+    <inertia ixx="4.8232327848" iyy="4.53348956976" izz="5.0206133078" ixy="-0.0" iyz="-0.0" ixz="0.03733889251"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/Rocker_R.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/Rocker_R.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rocker_l">
+  <inertial>
+    <origin xyz="-0.4002194744336831 -2.8073985617496778e-16 0.04900225925646633" rpy="0 0 0"/>
+    <mass value="145.15"/>
+    <inertia ixx="4.8232327848" iyy="4.53348956976" izz="5.0206133078" ixy="-0.0" iyz="-0.0" ixz="0.03733889251"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/Rocker_L.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/Rocker_L.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="belt_frame">
+  <inertial>
+    <origin xyz="-0.4002194744336831 -2.8073985617496778e-16 0.04900225925646633" rpy="0 0 0"/>
+    <mass value="145.15"/>
+    <inertia ixx="4.8232327848" iyy="4.53348956976" izz="5.0206133078" ixy="-0.0" iyz="-0.0" ixz="0.03733889251"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/Belt_Frame.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find lunabotics2025_urdf)/meshes/Belt_Frame.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<joint name="wheel_fl_to_rocker_l" type="continuous">
+  <origin xyz="0.292291 -0.226416 -0.316205" rpy="0 0 0"/>
+  <parent link="rocker_l"/>
+  <child link="wheel_fl"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="wheel_bl_to_rocker_l" type="continuous">
+  <origin xyz="0.292291 0.211503 -0.319574" rpy="0 0 0"/>
+  <parent link="rocker_l"/>
+  <child link="wheel_bl"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="wheel_fr_to_rocker_r" type="continuous">
+  <origin xyz="-0.293673 0.214632 -0.316895" rpy="0 0 3.1415926535"/>
+  <parent link="rocker_r"/>
+  <child link="wheel_fr"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="wheel_br_to_rocker_r" type="continuous">
+  <origin xyz="-0.293682 -0.226364 -0.319574" rpy="0 0 3.1415926535"/>
+  <parent link="rocker_r"/>
+  <child link="wheel_br"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+
+
+<joint name="rocker_l_to_base_link" type="revolute">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rocker_l"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit effort="1000" velocity="2.0" lower="-0.6" upper="0.6" />
+</joint>
+
+<joint name="rocker_r_to_base_link" type="revolute">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rocker_r"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit effort="1000" velocity="2.0" lower="-0.6" upper="0.6" />
+</joint>
+
+<joint name="belt_frame_to_base_link" type="revolute">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="belt_frame"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit effort="1000" velocity="2.0" lower="-0.6" upper="0.6" />
+</joint>
+
+</robot>
